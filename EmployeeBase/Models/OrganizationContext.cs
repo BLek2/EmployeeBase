@@ -11,7 +11,6 @@ namespace EmployeeBase.Models
 
         public OrganizationContext() : base("OrganizationContext") { }
 
-        public DbSet<Employee> Employees;
-
+        public DbSet<Employee> Employees { get; set; }
     }
 }

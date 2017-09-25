@@ -1,4 +1,4 @@
-﻿
+﻿@model EmployeeBase.Models.Employee
 @{
     Layout = null;
 }
@@ -9,8 +9,60 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Create</title>
+    <link href="~/Content/CSS/ValidationErrors.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
- 
+     @using (Html.BeginForm("Create", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+     {
+         @Html.ValidationSummary(true)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <span class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </span>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Surname)
+        </div>
+        <span class="editor-field">
+            @Html.EditorFor(model => model.Surname)
+            @Html.ValidationMessageFor(model => model.Surname)
+        </span>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Adress)
+        </div>
+        <span class="editor-field">
+            @Html.EditorFor(model => model.Adress)
+            @Html.ValidationMessageFor(model => model.Adress)
+        </span>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <span class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </span>
+
+       
+            <div class="editor-label">
+                <input type="file" name="Photo" id="Photo" />
+            </div>
+
+            <div class="editor-label">
+                <input type="file" name="Biography" id="Biography" />
+            </div>
+
+            <br />
+            <br />
+            <input type="submit" value="Create" />
+       
+
+
+     }
 </body>
 </html>
