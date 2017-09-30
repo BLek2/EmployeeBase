@@ -11,6 +11,25 @@
     <title>Read</title>
 </head>
 <body>
-  
+  @foreach (var b in ViewBag.employee)
+  {
+    <div> <img src="~/Content/Photo/Andrew Romanuk photo.jpg" name="@b.Name" id="@b.Name" /> </div>
+      <p>@b.Name</p>
+      <p>@b.Surname</p>
+      <p>@b.Adress</p>
+      <p>@b.Email</p>
+    <div>
+        @using (Html.BeginForm("GetFile", "Home", FormMethod.Post))
+        {
+           <input type="hidden" name="FilePath" value="@b.Biography"/>
+           <input type="hidden" name="file_path" value="@b.Biography" />
+           <input type="submit" value="Download">
+        }
+    </div>
+
+      <hr/>
+    
+
+  }
 </body>
 </html>

@@ -56,6 +56,10 @@ namespace EmployeeBase.Controllers
         }
         public ActionResult Read()
         {
+            IEnumerable<Employee> employee = organizationDb.Employees;
+
+            ViewBag.employee = employee;
+
             return View();
         }
         public ActionResult UpdateAndDelete()
@@ -76,6 +80,17 @@ namespace EmployeeBase.Controllers
         public ActionResult Delete()
         {
             return View();
+        }
+       
+        public FileResult GetFile(string FilePath)
+        {
+            // Путь к файлу
+            string file_path = FilePath;
+            // Тип файла - content-type
+            string file_type = "application/docx";
+            // Имя файла - необязательно
+           string  file_name = "Andrew Romanuk biography.docx";
+            return File(file_path, file_type, file_name);
         }
     }
 }
