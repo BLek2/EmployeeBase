@@ -97,6 +97,7 @@
     <Content Include="Content\CSS\ValidationErrors.css" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\CRUD\Read.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.js" />

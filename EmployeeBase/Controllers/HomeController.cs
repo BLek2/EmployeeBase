@@ -77,9 +77,14 @@ namespace EmployeeBase.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Delete()
+        public ActionResult Delete(int Id)
         {
-            return View();
+            var FindEmployee = organizationDb.Employees.Find(Id);
+
+            organizationDb.Employees.Remove(FindEmployee);
+            organizationDb.SaveChanges();
+
+            return RedirectToAction("Read");
         }
        
         public FileResult GetFile(string FilePath)
